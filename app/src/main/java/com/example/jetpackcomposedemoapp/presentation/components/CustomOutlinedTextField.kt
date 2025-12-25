@@ -4,6 +4,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
@@ -66,7 +69,7 @@ fun CustomOutlinedTextField(
     )
 }
 
-/*
+
 @Composable
 fun CustomPasswordField(
     value: String,
@@ -107,5 +110,18 @@ fun CustomPasswordField(
         modifier = modifier.fillMaxWidth(),
         singleLine = true,
         isError = iserror
+
     )
-}*/
+    /*CustomPasswordField composable, the trailingIcon is used to create the "show/hide password" feature*/
+
+    Spacer_20dp()
+
+    Button(
+        onClick = {
+
+        },
+        modifier = modifier.fillMaxWidth()
+    ) {
+        Text("Registor")
+    }
+}

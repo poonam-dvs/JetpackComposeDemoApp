@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -29,6 +31,8 @@ import androidx.compose.ui.unit.sp
 import com.example.jetpackcomposedemoapp.R
 import com.example.jetpackcomposedemoapp.presentation.components.CircularImage
 import com.example.jetpackcomposedemoapp.presentation.components.CustomOutlinedTextField
+import com.example.jetpackcomposedemoapp.presentation.components.CustomPasswordField
+import com.example.jetpackcomposedemoapp.presentation.components.Spacer_10dp
 import com.example.jetpackcomposedemoapp.presentation.components.Spacer_20dp
 import com.example.jetpackcomposedemoapp.presentation.components.Spacer_8dp
 import com.example.jetpackcomposedemoapp.presentation.components.SubtitleLarge
@@ -38,6 +42,10 @@ import com.example.jetpackcomposedemoapp.presentation.components.TitleMedium
 fun RegisterScreen() {
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var referCode by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -121,5 +129,31 @@ fun RegisterScreen() {
             )
         }
 
+        // for email
+        CustomOutlinedTextField(
+            value = email,
+            onValueChange = { email = it },
+            label = "Email",
+            leadingIcon = Icons.Default.Email,
+            keyboardType = KeyboardType.Email,
+        )
+
+        Spacer_10dp()
+
+        CustomOutlinedTextField(
+            value = referCode,
+            onValueChange = { referCode = it },
+            label = "Refer Code",
+            leadingIcon = Icons.Default.Share,
+            keyboardType = KeyboardType.Text
+        )
+
+        Spacer_10dp()
+
+        // Password Field with Eye Icon
+        CustomPasswordField(
+            value = password, onValueChange = { password = it }, iserror = false
+        )
+        Spacer_10dp()
     }
 }
