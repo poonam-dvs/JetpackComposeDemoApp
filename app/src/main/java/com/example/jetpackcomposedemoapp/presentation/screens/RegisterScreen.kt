@@ -12,6 +12,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -28,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.jetpackcomposedemoapp.R
 import com.example.jetpackcomposedemoapp.presentation.components.CircularImage
 import com.example.jetpackcomposedemoapp.presentation.components.CustomOutlinedTextField
@@ -37,9 +39,10 @@ import com.example.jetpackcomposedemoapp.presentation.components.Spacer_20dp
 import com.example.jetpackcomposedemoapp.presentation.components.Spacer_8dp
 import com.example.jetpackcomposedemoapp.presentation.components.SubtitleLarge
 import com.example.jetpackcomposedemoapp.presentation.components.TitleMedium
+import com.example.jetpackcomposedemoapp.presentation.navigation.Screen
 
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavHostController) {
     var firstName by remember { mutableStateOf("") }
     var lastName by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -155,5 +158,16 @@ fun RegisterScreen() {
             value = password, onValueChange = { password = it }, iserror = false
         )
         Spacer_10dp()
+        // Submit Button
+        Button(
+            onClick = {
+                // Handle submit button click
+                navController.navigate(Screen.HomeMainScreen.route)
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Register")
+        }
+
     }
 }
