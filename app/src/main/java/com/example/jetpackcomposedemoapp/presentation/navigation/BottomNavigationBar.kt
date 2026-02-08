@@ -73,7 +73,7 @@ fun BottomNavigationBar(
                 onClick = {
                     navController.navigate(screen.route) {
                         popUpTo(navController.graph.findStartDestination().id) { inclusive = false }
-                        launchSingleTop = true
+                        launchSingleTop = true //: This important flag tells the NavController, "If the Profile screen is already at the top of the history, don't create a new one. Just reuse it.
                     }
                 },
                 colors = NavigationBarItemDefaults.colors(

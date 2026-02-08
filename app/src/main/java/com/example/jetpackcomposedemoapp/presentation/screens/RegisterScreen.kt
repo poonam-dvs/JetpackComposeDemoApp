@@ -162,7 +162,12 @@ fun RegisterScreen(navController: NavHostController) {
         Button(
             onClick = {
                 // Handle submit button click
-                navController.navigate(Screen.HomeMainScreen.route)
+                navController.navigate(Screen.HomeMainScreen.route){
+                    // below code is written for if we don't want perticular screen is popback stack.
+                    popUpTo(Screen.Register.route){
+                        inclusive = true
+                    }
+                }
             },
             modifier = Modifier.fillMaxWidth()
         ) {

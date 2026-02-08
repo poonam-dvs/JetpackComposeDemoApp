@@ -25,4 +25,12 @@ sealed class Screen(
 
     object HomeMainScreen: Screen(route = "home_main_screen", "HomeMainScreen")
 
+    object SettingScreen: Screen(route = "setting_screen","SettingScreen")
+
+    object BlogScreen: Screen(route = "blog_screen","BlogScreen")
+
+    object HelpScreen: Screen(route = "help_screen","HelpScreen")
+
+    object BlogsDetailsScreen : Screen("blog_details", label = "BlogDetails")
+
 }
