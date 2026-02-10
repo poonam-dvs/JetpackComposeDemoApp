@@ -33,4 +33,6 @@ sealed class Screen(
 
     object BlogsDetailsScreen : Screen("blog_details", label = "BlogDetails")
 
+    object NotesScreen : Screen("notes_screen", label = "Notes")
+
 }

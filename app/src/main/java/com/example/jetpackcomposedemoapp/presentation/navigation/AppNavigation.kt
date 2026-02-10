@@ -12,6 +12,7 @@ import com.example.jetpackcomposedemoapp.presentation.screens.BlogListScreen
 import com.example.jetpackcomposedemoapp.presentation.screens.BlogsScreen
 import com.example.jetpackcomposedemoapp.presentation.screens.HelpScreen
 import com.example.jetpackcomposedemoapp.presentation.screens.HomeMainScreen
+import com.example.jetpackcomposedemoapp.presentation.screens.NotesScreen
 import com.example.jetpackcomposedemoapp.presentation.screens.RegisterScreen
 import com.example.jetpackcomposedemoapp.presentation.screens.SettingScreen
 import com.google.gson.Gson
@@ -38,7 +39,7 @@ fun AppNavigation() {
         }
 
         composable(Screen.HelpScreen.route){
-            HelpScreen()
+            HelpScreen(navController = navController)
         }
 
         composable(Screen.BlogScreen.route) {
@@ -57,6 +58,10 @@ fun AppNavigation() {
             val blog = Gson().fromJson(blogJson, BlogData::class.java)
             // 6. Displays the BlogDetailsScreen, passing the BlogData object to it
             BlogDetailsScreen(blogData = blog, navController = navController)
+        }
+
+        composable(Screen.NotesScreen.route){
+            NotesScreen()
         }
     }
 }

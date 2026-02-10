@@ -52,6 +52,13 @@ fun ProfileScreen(
         ) {
             navHostController.navigate(Screen.SettingScreen.route)
         }
+
+        ProfileItem(
+            iconRes = R.drawable.blog,
+            title = "Notes"
+        ){
+            navHostController.navigate(Screen.NotesScreen.route)
+        }
     }
 
 }
